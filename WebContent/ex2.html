@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<script>
+
+	//null vs undefined
+	
+	var myVar; 
+	var myVar2 = null;
+	console.log(myVar + ":"+myVar2);
+	console.log(myVar == myVar2); //true
+	console.log(myVar === myVar2); //false myVar 는 undefined
+	
+	
+	// ==(!=,equality, 값의 등치성, 자동 형변환o)
+	console.log("2"==2); 	//true
+	console.log(true==1);
+	console.log('abc'==new String('abc'));
+	console.log(0==false);
+	
+	// ===(!==, identity, 객체의 동일성, 형변환x)
+	console.log("2"===2);	//false
+	console.log(true===1);
+	console.log('abc'===new String('abc'));
+	console.log(0===false);
+	
+	// 추천:
+	// == 연산자를 사용할 때는 엄격하게 형변환을 해서
+	// 두 피연산자의 타입을 맞춘다.
+	console.log(parseInt("5")==5);
+	
+	//변수 범위 
+	//1.var 사용 유무
+	//2.var를 사용했을 때
+	//3.변수의 범위는 함수
+	var i = 5;
+	f = function f(){
+		//함수 안에서 var를 사용해서 변수를 정의하면 지역변수가 된다.
+		var i=20;
+		console.log(i);
+		i = i -10;
+	}
+	f();
+	console.log(i);
+	//결론은 무조껀 var를 사용해서 변수를 정의하는게 좋다.
+	
+	
+	//statement 구분
+	//statement : JS Engine이 읽어서 실행하는 단위
+	// \n or ; 개행 또는 세미클론 단위로 읽어서 실행한다.
+	var str = "hello world"
+	console.log(str)
+	var str2 = "hello world2"; console.log(str2);
+	
+	//동적 타이핑(Dynamical Typing)
+	// 실행중에 변수의 타입을 결정한다.
+	var a= 10;
+	console.log(a+" : "+typeof a);
+	
+	a="hello World";
+	console.log(a+" : "+ typeof a);
+	//추천 : 엄격하게 하나의 변수 타입은 변경하지 않도록 코딩
+	
+	// 전역(global) 객체 window
+	console.log(window.a);
+	
+	
+	var o = {};
+	o.name ="둘리"; //확장불가능
+	o.ages = new Number(30); //확장가능 
+	o.ages.man=28;
+	console.log(window.o);
+	console.log(window.o.name);
+	console.log(window.o.ages);
+	console.log(window.o.ages.man);
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//String 함수
+var str = "string1 string2 string3";
+console.log("str문자열길이:"+str.length);
+
+var index = str.indexOf("string2");
+console.log("indexOf:"+index);
+
+var str1= str.substr(index);
+console.log(str1);
+
+var str2 = str.substr(index,7);
+console.log(str2);
+
+//String 객체는 불변
+console.log(str1);
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

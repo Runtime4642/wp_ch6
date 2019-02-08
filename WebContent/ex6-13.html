@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+var url = 'http://localhost:8089/mysite5?n=안"대"혁!&e=kickcar@gmail.com';
+console.log(escape(url)); //Deprecated 다른거 쓰는걸 추천
+//console.log(encodingURI(url));
+var url2 = encodeURI(url);
+
+
+var url = 'http://localhost:8089/mysite5';
+var name='정"영"석';
+url4 = url +"?n="+encodeURIComponent(name);
+console.log(url4);
+
+// 타이머 설정1 = 한 번만 실행
+setTimeout(function(){
+	console.log("redirect");
+	//location.href=url2;
+	},
+	1000*3);
+
+
+//타이머 설정2 - 여러번 실행되게 할때(interval)
+var num=0;
+var intervalid = setInterval(function(){
+	console.log(++num);
+	if(num==10)
+		clearInterval(intervalid);
+},1000)
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

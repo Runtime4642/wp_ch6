@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script type="text/javascript" src="rectangle.js"></script>
+
+
+<script type="text/javascript">
+window.onload = function(){
+	var rec1 = new Rectangle(300,300,500,500,"#555");
+	rec1.show();
+	var r2 = new Rectangle(250,250,400,400,"#f00");
+	r2.show();
+	
+	/* timer */
+	setTimeout(function(){
+		console.log("hello~");}/*function*/, 1000/*milliseconds*/);
+	var count1=0;
+	var count2=0;
+	
+	var intervalId1=setInterval(function(){
+		console.log(console.log(++count1));
+		if(count1==10){
+			clearInterval(intervalId1);
+		}
+	},1000);
+	
+	
+	/* Random */
+	var intervalId2=setInterval(function(){
+		var rand = Math.floor(Math.random()*10+1);
+		console.log("-->"+rand);
+		
+		if(++count2==30){
+			clearInterval(intervalId2);
+		}
+	},500);
+	
+	
+}
+</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+//함수 파라미터
+var f = function(arg1,arg2,arg3){
+	console.log(arg1);
+	console.log(arg2.name);
+	arg3();
+}
+
+var f2 = function(){
+	console.log(arguments[0]);
+	console.log(arguments[1].name);
+	arguments[2]();
+}
+
+
+var sum= function(){
+	var sum=0;
+	for(var i=0;i < arguments.length;i++){
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+//anonymous parameters;
+f(10,{name:'둘리'},function(){console.log("실행했지룽")});
+
+f2(10,{name:'둘리'},function(){console.log("실행했지룽")});
+
+
+// anonymous function 정의 하면서 바로 호출하는것 아마도 정의한부분을 바로 묶어주고 그 function을 바로() 사용해서 파라메터를 넣으면서 실행.
+(function(){
+	console.log(arguments[0]);
+	console.log(arguments[1].name);
+	arguments[2]();
+})(10,{name:'둘리'},function(){console.log("anonymous 실행")});
+
+
+console.log(sum(10,20,50));
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

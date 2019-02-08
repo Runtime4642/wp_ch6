@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var rect1 = {
+		x1:100,
+		y1:100,
+		x2:200,
+		y2:200,
+		bgColor:"#00f",
+		show: function(){
+			document.write("<div style ='position:absolute;"+
+			"left:"+this.x1+"px;"+
+			"top:"+this.y1+"px;"+
+			"width:"+(this.x2-this.x1)+"px;"+
+			"height:"+(this.x2-this.y1)+"px;"+
+			"background-color:"+this.bgColor+";"+
+			"'></div>")
+		}
+}
+
+
+
+var Rectangle = function (x1,y1,x2,y2,color) {
+	this.x1 = x1;
+	this.y1 = y1;
+	this.x2 = x2;
+	this.y1 = y1;
+	this.color = color;
+}
+Rectangle.prototype.show =function(){
+		document.write("<div style ='position:absolute;"+
+			"left:"+this.x1+"px;"+
+			"top:"+this.y1+"px;"+
+			"width:"+(this.x2-this.x1)+"px;"+
+			"height:"+(this.x2-this.y1)+"px;"+
+			"background-color:"+this.color+";"+
+			"'></div>")
+		};
+
+window.onload = function(){
+	rect1.show();
+	var rec1 = new Rectangle(300,300,500,500,"#555");
+	rec1.show();
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
